@@ -584,10 +584,10 @@ class _TableCalendarState extends State<TableCalendar>
             widget.calendarController._isWeekend(date, widget.weekendDays);
 
         if (isWeekend && widget.builders.dowWeekendBuilder != null) {
-          return widget.builders.dowWeekendBuilder(context, weekdayString);
+          return widget.builders.dowWeekendBuilder(context, weekdayString, date.weekday);
         }
         if (widget.builders.dowWeekdayBuilder != null) {
-          return widget.builders.dowWeekdayBuilder(context, weekdayString);
+          return widget.builders.dowWeekdayBuilder(context, weekdayString, date.weekday);
         }
         return Center(
           child: Text(
